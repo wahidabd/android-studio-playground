@@ -1,9 +1,10 @@
 package com.anangkur.androidstudioplayground
 
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import androidx.appcompat.widget.AppCompatButton
 
 data class Debug(
     val verbose: String,
@@ -14,7 +15,10 @@ data class Debug(
 )
 
 class MainActivity : AppCompatActivity() {
-    @SuppressLint("SuspiciousIndentation")
+
+    private var buttonLogin: AppCompatButton? = null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -24,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             "ini log info",
             "ini log debug",
             "ini log warning",
-            "ini log error"
+            "ini log error",
         )
 
         Log.v("anangkur", debug.verbose)
@@ -32,5 +36,10 @@ class MainActivity : AppCompatActivity() {
         Log.d("anangkur", debug.debug)
         Log.w("anangkur", debug.warning)
         Log.e("anangkur", debug.error)
+
+        buttonLogin = findViewById(R.id.button_login)
+        buttonLogin?.setOnClickListener {
+            Toast.makeText(this, "under maintenance!", Toast.LENGTH_SHORT).show()
+        }
     }
 }
