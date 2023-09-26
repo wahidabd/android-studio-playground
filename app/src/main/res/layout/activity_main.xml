@@ -11,7 +11,7 @@
         android:id="@+id/app_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/logo"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="Forgot Password?"
+        android:text="@string/label_forgot_password"
         style="@style/TextButton"
         app:layout_constraintTop_toBottomOf="@id/edit_password"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,27 +65,26 @@
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintBottom_toTopOf="@id/button_login"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:layout_marginHorizontal="16dp"
-        android:text="Login"
-        style="@style/ButtonPrimary"
+        style="@style/MaterialButton"
+        android:text="@string/label_login"
+        app:backgroundTint="@color/design_default_color_primary"
         app:layout_constraintTop_toBottomOf="@id/forgot_password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/button_register"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginHorizontal="16dp"
-        android:text="Register"
-        style="@style/ButtonSecondary"
+        style="@style/MaterialButtonOutline"
+        android:text="@string/label_register"
         app:layout_constraintTop_toBottomOf="@id/button_login"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
